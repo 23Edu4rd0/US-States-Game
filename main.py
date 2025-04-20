@@ -43,7 +43,7 @@ while len(guessed_states) < 50:
     elif answer_state == 'Exit':
         tkinter.messagebox.showinfo(title='Goodbye', message='Thanks for playing! We created a file with the states you missed.')
         states_missed = df[df['state'].isin(guessed_states) == False]
-        states_missed.to_csv('states_to_learn.csv', index=False)
+        states_missed.to_csv('states_to_learn.csv', columns=['state'], index_label='')
         break
     
     elif answer_state in guessed_states:
